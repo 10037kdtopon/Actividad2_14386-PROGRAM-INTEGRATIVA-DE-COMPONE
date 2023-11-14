@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000000; /* Fondo oscuro para la página */
+    color: #fff; /* Color del texto */
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Centra el contenido verticalmente */
+    justify-content: center;
+    align-items: center;
+}
+
+#gallery-component {
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+}
+
+#main-image-container {
+    text-align: center;
+}
+
+#main-image {
+    max-width: 100%;
+    height: auto;
+    border: none; /* Eliminamos el borde de la imagen principal */
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+#main-image:hover {
+    border-color: rgb(50, 28, 45), 0, 157);
+}
+
+#thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.thumbnail {
+    margin: 0 20px 20px 0; /* Aumentamos el margen entre las miniaturas a 20px */
+    cursor: pointer;
+    border: none; /* Eliminamos el borde de las miniaturas */
+    border-radius: 8px;
+    transition: border-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    flex: 1 0 100px;
+}
+
+.thumbnail:hover {
+    border-color: #28a745;
+    transform: scale(1.1);
+}
+
+.thumbnail.active {
+    border-color: #28a745;
+}
+
+#nav-buttons {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente */
+    margin-top: 20px;
+    width: 100%; /* Ajustamos el ancho al 100% */
+}
+
+#prev-btn,
+#next-btn {
+    background-color: #142231;
+    color: #fff;
+    border: 2px solid #1f382b;
+    border-radius: 10px; /* Aumentamos el radio del borde para hacerlo más redondeado */
+    padding: 30px 30px; /* Aumentamos el tamaño del botón */
+    font-size: 44px; /* Aumentamos el tamaño de la letra */
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#prev-btn:hover,
+#next-btn:hover {
+    background-color: rgb(3, 13, 23);
+    border-color: #00b374;
+    color: #4d1818;
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    #gallery-component {
+        padding: 10px;
+    }
+
+    #thumbnail-container {
+        margin-top: 10px;
+    }
+
+    .thumbnail {
+        flex-basis: calc(33.33% - 20px);
+    }
+
+    #prev-btn,
+    #next-btn {
+        width: 100%; /* Ocupar todo el ancho en dispositivos móviles */
+    }
+}
